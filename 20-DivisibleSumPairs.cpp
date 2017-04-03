@@ -1,0 +1,31 @@
+//https://www.hackerrank.com/challenges/divisible-sum-pairs
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+
+int main(){
+    int n;
+    int k;
+    int cont=0;
+    cin >> n >> k;
+    
+    vector<int> a(n);
+    
+    for(int a_i = 0;a_i < n;a_i++){
+       cin >> a[a_i];
+    }
+    
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            if(i>=j) continue;
+            if((a[i]+a[j])%k==0) cont++;
+        }
+    }
+    
+    cout<<cont;
+    return 0;
+}
+
